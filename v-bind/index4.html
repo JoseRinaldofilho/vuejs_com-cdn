@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+    <style>
+        .verde {
+            color: green;
+            
+        }
+        .negrito {
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    V-BIND subistitue os valores v-bind ou : 
+    <div id="app">
+     <a v-bind:href="site">Site</a> <!--v-bind:href="site" usa site da data--> 
+     <p :class="cor" class="negrito">Entrendendo a diretiva v-bind</p>
+     <input type="text" :placeholder="testo " v-bind:value="valor">
+     <input type="checkbox" :checked="check">
+    </div>
+    <script>
+
+        const vm = new Vue({ 
+            el: '#app', 
+            data: {
+              site: 'https://www.google.com.br',
+              cor: 'verde',
+                testo: 'pegando de data v-bind',
+            valor: 'entendendo a diretiva -',
+            check: true,            
+            },
+            methods: {
+              
+            }
+              
+        });
+
+       
+    </script>
+</body>
+
+
+<!-- usando metodos
+<div id="app">
+  
+</div>
+<script>
+
+    const vm = new Vue({ 
+        el: '#app', 
+        data: {} 
+         
+    });
+
+   
+</script> -->
+</html>

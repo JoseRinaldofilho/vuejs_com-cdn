@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    teste live serve
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <p>Valor total {{ valorTotal }}</p>
+        <p>estou logado {{ logado }}</p>
+        <h3>meus hobbies {{ hobbies[2] }}</h3>
+        <p>Nome: {{ perfil.nome }}, Curso: {{ perfil.cursos[0].nome }}</p>
+       
+    </div>
+    <script>
+
+        const vm = new Vue({ 
+            el: '#app', 
+            data: { 
+                message: 'Hello Vue!',
+                valorTotal: 1500,
+                logado: true,
+                hobbies: [
+                    'Comer',
+                     'Dormir',
+                      'Estudar'
+            ],
+            perfil: {
+                nome: 'João',
+                idade: 20,
+                email: 'jose@jose',
+                endereco: {
+                    rua: 'rua do joão',
+                    numero: '123'
+                },
+                cursos: [ {
+                    nome: 'vue',
+                    curso2: 'php'
+                }
+            ]
+            }
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

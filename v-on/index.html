@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <style>
+     
+    </style>
+    <title>Document</title>
+</head>
+<body>
+   Utilizando expressões no data binding
+   v-on == @click="  df 
+   <br>
+    <div id="app">
+        <p :value="oi"></p>
+        <input type="text":value="oi">
+        <input type="text" v-on:keyup="imprimirTexto">
+        <button @click="mensagemalerta" >Botão</button>
+    </div>
+    <script>
+
+    const vm = new Vue({ 
+        el: '#app', 
+        data: {
+           oi: 'oi v-bind',
+             
+        },        
+        methods: {  
+            imprimirTexto() {
+                console.log('teste ');
+            },
+            mensagemalerta() {
+                alert('teste v-on');
+            } 
+        } 
+         
+    });
+
+       
+    </script>
+</body>
+
+
+<!-- usando metodos
+<div id="app">
+  
+</div>
+<script>
+
+    
+
+   
+</script> -->
+</html>

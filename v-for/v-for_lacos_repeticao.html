@@ -19,6 +19,7 @@
         </ul>
         <button @click="adcionar()">Adicionar</button>
         <button @click="remover()">Remover</button>
+        <button @click="modifica()">Modificar</button>
         <hr>
         <table  class="table table-primary table-striped table-hover table-bordered table-sm table-responsive-sm">
             <thead>
@@ -127,6 +128,12 @@
                     // pop remove o ultimo elemento do array                
                     this.comentario.pop()
                 },
+                modifica(){
+                    // console.log(this.comentario);
+                    // this.comentario[0].comentario = 'comentario modificado'
+                    // this.comentario[0].comentario = 'comentario modificado'
+                    this.$set(this.comentario, 1, {id: 1, comentario: 'comentario modificado'});
+                }
 
             }
         })

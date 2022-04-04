@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+    <script src="/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h4>Adicionar Paciente </h4>
+        <span>Nome: </span><input type="text" id="inputNome"><br>
+        <span>Idade: </span><input type="text" id="inputIdade"><br>
+        <span>Plano: </span><input type="text" id="inputPlano"><br><br>
+
+        <button @click="addPaciente()">adcionar</button>
+        <hr>
+        <h4>Utimo pacientes cadastrado</h4>
+        <p v-if="pacientes.length > 0"> <!--mostra ulktimo paciente -->
+           {{ ultimoPaciente.nome }}
+              - {{ ultimoPaciente.idade }}
+               - {{ ultimoPaciente.plano }}
+        </p>
+
+
+        <h4>Pacientes cadastrados </h4>
+        <p v-for="p in pacientes">{{ p.nome }}
+             - idade {{ p.idade }}
+              - plano {{ p.plano }}</p>
+
+         <h4>Paciente do pano ouro</h4>
+         <p v-for="p in pacientes">{{ p.plano  }}</p>     
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+               pacientes: [],
+            },
+            methods: {
+                addPaciente(){
+                  this.pacientes.push({
+                    nome: inputNome.value,
+                    idade: inputIdade.value,
+                    plano: inputPlano.value
+                  })      
+                }
+            },
+            computed: {
+                ultimoPaciente(){
+                  let key = this.pacientes.length - 1; // paciente.length(tamanho do array) - 1 
+                    let txt = ''
+
+                  txt += this.pacientes[key].nome + ', '
+                  txt += this.pacientes[key].idade + ', '
+                  txt += this.pacientes[key].plano + '.'
+                  
+                    return txt.toLowerCase // caixa alta
+                },
+                pacientesPalnoOuto(){
+                    return this.pacientes.filter(p => p.plano == 'ouro')
+                }
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

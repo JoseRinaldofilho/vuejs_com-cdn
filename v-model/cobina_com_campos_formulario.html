@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+    <script src="/vue.js"></script>
+</head>
+<body>
+    <!-- v-model trabalha com campos de formudalos conseguir dados -->
+    <div id="app">
+        {{ paciente }} <hr>
+       
+        <input type="text" v-model="paciente" >
+        <hr>
+        <!-- comapo radio para ver os sexo -->
+        <input type="radio" value="f" v-model="sexo">Feminino<br>
+        <input type="radio" value="m" v-model="sexo">Masculino<br>
+        {{ sexo }}
+        <hr>
+        <!-- ultilisando o select a v- model e no select -->
+        <select name="" id="" v-model="plano">
+            <option value="">Selecione</option>
+            <option value="1" >basico 1</option>
+            <option value="2"  >Amil 2</option>
+            <option value="3" >MAter 3</option>
+            
+        </select>
+        <br> {{ plano }}
+        <hr>
+           <!-- v-model check box --> 
+        <input type="checkbox" value="100" v-model="doencas"> Asma   
+        <input type="checkbox" value="101" v-model="doencas"> diabetes    
+        <input type="checkbox" value="102" v-model="doencas"> Masculinorinite
+        <br>{{ doencas }}   
+        <hr>
+        <!-- v-model text area -->
+        <textarea v-model="diagnostico"></textarea>
+        <br>{{ diagnostico }}
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                paciente: 'jose rinaldo',
+                sexo: '',
+                plano: '',
+                doencas: [],
+                diagnostico: '',
+            },
+            
+            methods: {
+                // setPaciente(event){
+                //     this.paciente = event.target.value
+                // }
+            },
+            computed: {
+                //
+            },
+        })
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

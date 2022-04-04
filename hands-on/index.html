@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="../vue.js"></script>
+    <title>Title</title>
+    <style>
+        .azul {
+            background-color: blue;
+        }
+        .verde {
+            background-color: green;
+        }
+        .vermelho{
+            background-color: red;
+        }
+        .branco{
+            background-color: white;
+        }
+        .borda{
+            border: 1px solid black;
+        }
+        .div-principal{
+            width: 200px;
+            height: 200px;           
+        }
+        .div-comum{
+            width: 50px;
+            height: 50px;    
+            display: inline-block;;       
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div class="borda div-principal" :class="cor">
+           cor: {{ cor }}
+          
+       </div>
+       <hr>
+       <div @click="mudaCor('verde')" class="borda div-comum"></div>
+       <div class="borda div-comum"   @mouseover="mudaCor('azul')"  @mouseout="mudaCor('verde')"></div>
+       <div class="borda div-comum"></div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                cor: 'branco',
+                
+            },
+            methods: {
+                mudaCor(c){
+                    this.cor = c;
+                                       
+                },
+                mudaVermelho(v){
+                    this.cor1 = v;
+                }
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

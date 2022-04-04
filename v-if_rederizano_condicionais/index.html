@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+    <script src="/vue.js"></script>
+</head>
+<body>
+    <h4>v-if</h4>
+    <div id="app">
+       <!--  -->
+        <button @click="exibirSaldo = !exibirSaldo">
+            <span v-if="!exibirSaldo">Exibir Saldo</span>
+            <span v-if="exibirSaldo">Oculta saldo</span>
+        </button> <!-- toggle -->
+        <br>
+        <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span>
+        </p>
+        <hr>
+        <h5>v-if v-else</h5>
+
+        idade: <input type="text" id="inputIdade" @blur="setIdade()">
+       <p v-if="idade >=18">Maior de idade</p>
+       <p v-else="">Menor  de idade</p>
+       <hr>
+
+       <h4>V-if v-else-if v-else</h4>
+       Nota: <input type="text" id="inputNota" @blur="setNota()">
+       <p v-if="nota >= 6">Aprovado</p>
+       <p v-else-if="nota >=4 && nota < 6">Recuperaçao </p>
+       <p v-else="">Reprovadoo!!</p>
+      
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                saldo: 4570.17,
+                exibirSaldo: true,
+                idade: 0,
+                nota: 0
+             },
+            methods: {
+                setIdade(){
+                    this.idade = inputNota.value;
+                },
+                setNota(){
+                    this.nota = inputNota.value;
+                    // console.log(this.nota);
+                }
+
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

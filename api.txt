@@ -1,0 +1,5 @@
+-  O que uma api 
+
+- uma APi e um conjunto de rotinas e padrões estabelicidos por um softwere
+para a ultilização das suas fucionalidades por aplicativos que não pretende envolve-se en detalhes
+ da implemantação do softwere, mas apenas uar seus serviços.
